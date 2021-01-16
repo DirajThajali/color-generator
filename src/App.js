@@ -55,9 +55,15 @@ function App() {
         </form>
       </section>
       <section>
+        <div>
+          <h4>Tints</h4>
+        </div>
         {list.map((color, index) => {
           return <Color key={index} {...color} />;
         })}
+        <div>
+          <h4>Shades</h4>
+        </div>
       </section>
     </>
   );
