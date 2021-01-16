@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Color from "./Color";
 import { getTintsAndShades } from "./tintsAndShadesGenerator";
+import { switchTheme } from "./theme";
 
 function App() {
   const [color, setColor] = useState("");
@@ -18,13 +19,24 @@ function App() {
   };
 
   useEffect(() => {
-    setList(getTintsAndShades("blue", { hsl: false, hex: true, rgb: false }));
+    switchTheme();
+    setList(
+      getTintsAndShades("#339FFF", { hsl: false, hex: true, rgb: false })
+    );
   }, []);
 
   return (
     <>
       <section className="container">
-        <h1 className="title">Tints and Shades Generator</h1>
+        <div className="header">
+          <h1 className="title">Tints and Shades Generator</h1>
+          <label className="theme-switch">
+            <div>
+              <input id="toggler" type="checkbox" />
+              <span className="slider round"></span>
+            </div>
+          </label>
+        </div>
         <form onSubmit={handleSubmit}>
           <select
             name="type"
@@ -47,7 +59,7 @@ function App() {
             <option value="hsl">HSL</option>
           </select>
           <input
-            placeholder={type.hex ? "#0000ff" : type.rgb ? "0 0 255" : "240"}
+            placeholder={type.hex ? "#339FFF" : type.rgb ? "51 159 255" : "208"}
             type="text"
             name="color"
             value={color}

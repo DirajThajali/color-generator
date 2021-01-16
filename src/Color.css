@@ -11,6 +11,10 @@ article p {
   padding: 0.1em;
 }
 
+.middle {
+  border: 1px solid white;
+}
+
 .upper {
   text-transform: uppercase;
 }
