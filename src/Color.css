@@ -1,9 +1,114 @@
 article {
   display: block;
-  padding: 1.5em;
+  padding: 1em 2em;
 }
 
 article :hover {
   cursor: pointer;
+}
+
+article p {
+  padding: 0.1em;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.dark-color {
+  color: #383434;
+}
+
+.light-color {
+  color: white;
+}
+
+.clip {
+  color: #b3b3b3;
+}
+
+@media only screen and (min-width: 520px) {
+  .middle {
+    grid-column: span 2;
+    margin: 2em 25%;
+    border-radius: 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .middle {
+    grid-column: span 1;
+    margin: unset;
+    border-radius: unset;
+    display: unset;
+    border: 1px solid white;
+  }
+}
+
+@media only screen and (min-width: 970px) {
+  .middle {
+    grid-column: span 2;
+    grid-row: span 2;
+    margin: 2em;
+    border-radius: 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1250px) {
+  .middle {
+    grid-column: span 5;
+    margin: 2em 25%;
+    border-radius: 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .middle {
+    grid-column: span 1;
+    grid-row: span 1;
+    margin: unset;
+    border-radius: unset;
+    display: unset;
+    border: 2px solid white;
+  }
 }
 /*# sourceMappingURL=Color.css.map */

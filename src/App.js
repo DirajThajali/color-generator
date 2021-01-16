@@ -23,8 +23,8 @@ function App() {
 
   return (
     <>
-      <section>
-        <h1>Tints and Shades Generator</h1>
+      <section className="container">
+        <h1 className="title">Tints and Shades Generator</h1>
         <form onSubmit={handleSubmit}>
           <select
             name="type"
@@ -57,14 +57,16 @@ function App() {
         </form>
       </section>
       <section>
-        <div>
-          <h4>Tints</h4>
+        <div className="sub-title">
+          <p className="tints">Tints</p>
         </div>
-        {list.map((color) => {
-          return <Color key={color.id} {...color} />;
-        })}
-        <div>
-          <h4>Shades</h4>
+        <div className="colors">
+          {list.map((color) => {
+            return <Color key={color.id} {...color} />;
+          })}
+        </div>
+        <div className="sub-title">
+          <p className="shades">Shades</p>
         </div>
       </section>
     </>
