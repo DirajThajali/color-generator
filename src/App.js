@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Color from "./Color";
 import { getTintsAndShades } from "./tintsAndShadesGenerator";
 
 function App() {
   const [color, setColor] = useState("");
-  const [type, setType] = useState({ hsl: true, hex: false, rgb: false });
+  const [type, setType] = useState({ hsl: false, hex: true, rgb: false });
 
-  const [list, setList] = useState(getTintsAndShades("240", type));
+  const [list, setList] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (color) {
-      // add error checks. If rgb => has to be rgb format
       setList(getTintsAndShades(color, type));
       setColor("");
-    } else {
-      // show a modal that says please enter a value
     }
   };
+
+  useEffect(() => {
+    setList(getTintsAndShades("blue", { hsl: false, hex: true, rgb: false }));
+  }, []);
 
   return (
     <>

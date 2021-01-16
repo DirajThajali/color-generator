@@ -1,4 +1,4 @@
-/* The following code is referenced from the this article: 
+/* The following code is referenced from this article: 
 https://css-tricks.com/converting-color-spaces-in-javascript */
 
 export const rgbToHsl = (rgb) => {
@@ -7,6 +7,7 @@ export const rgbToHsl = (rgb) => {
   let r = value[0],
     g = value[1],
     b = value[2];
+  // console.log("Value: " + value);
 
   // Make r, g, and b fractions of 1
   r /= 255;
@@ -45,12 +46,14 @@ export const rgbToHsl = (rgb) => {
   // Multiply l and s by 100
   s = +(s * 100).toFixed(1);
   l = +(l * 100).toFixed(1);
-  console.log(h + " " + s + " " + l);
+  // console.log(h + " " + s + " " + l);
   return h + " " + s + " " + l;
 };
 
 export const hexToHsl = (hex) => {
-  // First convert HEX to RGB
+  if (hex.charAt(0) !== "#") {
+    hex = "#" + hex;
+  }
   let r = 0,
     g = 0,
     b = 0;
@@ -87,7 +90,6 @@ export const hexToHsl = (hex) => {
   s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
   s = +(s * 100).toFixed(1);
   l = +(l * 100).toFixed(1);
-
   return h + " " + s + " " + l;
 };
 

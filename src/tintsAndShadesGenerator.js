@@ -5,7 +5,7 @@ export const getTintsAndShades = (color, type) => {
   let list = [];
   let value = color;
   // console.log(type);
-  if (!isPrimOrSecond) {
+  if (!isPrimOrSecond && !type.hsl) {
     if (type.rgb) {
       value = rgbToHsl(color);
     }
@@ -53,7 +53,6 @@ export const getTintsAndShades = (color, type) => {
 };
 
 const getPrimaryOrSecondaryColor = (color) => {
-  // red, orange, yellow, green, blue, violet
   switch (color) {
     case "red":
       return 0;
