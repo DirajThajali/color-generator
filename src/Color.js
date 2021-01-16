@@ -1,7 +1,7 @@
 import React from "react";
 import "./Color.css";
 
-const Color = ({ h, s, l, hex, index }) => {
+const Color = ({ h, s, l, hex, brightness, index }) => {
   return (
     <article
       //   onClick={() => {
@@ -10,7 +10,7 @@ const Color = ({ h, s, l, hex, index }) => {
       //   }}
       style={{ backgroundColor: `hsl(${h}, ${s}%, ${l}%` }}
     >
-      <p>{l}%</p>
+      <p>{brightness}%</p>
       <p>{hex}</p>
       <p>Click to copy</p>
     </article>

@@ -58,8 +58,8 @@ function App() {
         <div>
           <h4>Tints</h4>
         </div>
-        {list.map((color, index) => {
-          return <Color key={index} {...color} />;
+        {list.map((color) => {
+          return <Color key={color.id} {...color} />;
         })}
         <div>
           <h4>Shades</h4>
