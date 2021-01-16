@@ -6,7 +6,7 @@ const Color = ({ h, s, l, hex, brightness, index }) => {
     <article
       //   onClick={() => {
       //     navigator.clipboard.writeText(hex);
-      //    // alertThe click to Copy div to change to copied to clipboard for 3 seconds
+      //     // alertThe click to Copy div to change to copied to clipboard for 3 seconds
       //   }}
       style={{ backgroundColor: `hsl(${h}, ${s}%, ${l}%` }}
     >

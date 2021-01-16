@@ -12,6 +12,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (color) {
+      // add error checks. If rgb => has to be rgb format
       setList(getTintsAndShades(color, type));
       setColor("");
     } else {

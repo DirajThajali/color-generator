@@ -3,10 +3,11 @@ import { rgbToHsl, hexToHsl, hslToHex } from "./colorConverter";
 export const getTintsAndShades = (color, type) => {
   let list = [];
   let value = color;
-  if (type === "rgb") {
+  console.log(type);
+  if (type.rgb) {
     value = rgbToHsl(color);
   }
-  if (type === "hex") {
+  if (type.hex) {
     value = hexToHsl(color);
   }
 
