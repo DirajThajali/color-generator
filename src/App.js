@@ -7,7 +7,7 @@ function App() {
   const [color, setColor] = useState("");
   const [type, setType] = useState({ hsl: true, hex: false, rgb: false });
 
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getTintsAndShades("240", type));
 
   const handleSubmit = (e) => {
     e.preventDefault();

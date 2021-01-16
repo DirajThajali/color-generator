@@ -1,19 +1,21 @@
 import { rgbToHsl, hexToHsl, hslToHex } from "./colorConverter";
 
 export const getTintsAndShades = (color, type) => {
+  const isPrimOrSecond = getPrimaryOrSecondaryColor(color);
   let list = [];
   let value = color;
-  console.log(type);
-  if (type.rgb) {
-    value = rgbToHsl(color);
+  // console.log(type);
+  if (!isPrimOrSecond) {
+    if (type.rgb) {
+      value = rgbToHsl(color);
+    }
+    if (type.hex) {
+      value = hexToHsl(color);
+    }
   }
-  if (type.hex) {
-    value = hexToHsl(color);
-  }
-
   const re = new RegExp("\\s+");
   value = value.split(re);
-  const h = parseInt(value[0]);
+  let h = isPrimOrSecond || parseInt(value[0]);
   const s = 100;
   let l = 100;
 
@@ -48,4 +50,30 @@ export const getTintsAndShades = (color, type) => {
     l -= 5;
   }
   return list;
+};
+
+const getPrimaryOrSecondaryColor = (color) => {
+  // red, orange, yellow, green, blue, violet
+  switch (color) {
+    case "red":
+      return 0;
+    case "orange":
+      return 30;
+    case "yellow":
+      return 60;
+    case "green":
+      return 120;
+    case "blue":
+      return 240;
+    case "violet":
+      return 270;
+    case "azure":
+      return 210;
+    case "purple":
+      return 285;
+    case "magenta":
+      return 300;
+    default:
+      return 0;
+  }
 };
