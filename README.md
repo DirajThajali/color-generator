@@ -1,3 +1,3 @@
 # Tints And Shades Generator
 
-A simple web app to help you generate variety of tints and shades given a color of your choice. You can see the live demo at [this link](https://tints-and-shades-generator.netlify.app)
+A simple web app to help you generate variety of tints and shades given a color of your choice. Feel free to check out the live demo [here](https://tints-and-shades-generator.netlify.app)!
