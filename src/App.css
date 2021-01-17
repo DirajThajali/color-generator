@@ -157,7 +157,7 @@ a {
 @media only screen and (min-width: 800px) {
   .container .title {
     margin-top: 0.7em;
-    font-size: 2em;
+    font-size: 2.2em;
   }
   .container form {
     margin-top: 0.7em;
@@ -166,7 +166,7 @@ a {
   .container form select,
   .container form input,
   .container form button {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .colors {
     display: -ms-grid;
@@ -188,7 +188,7 @@ a {
 @media only screen and (min-width: 1250px) {
   .container .title {
     margin-top: 0.8em;
-    font-size: 2.5em;
+    font-size: 3em;
   }
   .container form {
     margin-top: 0.9em;
@@ -197,7 +197,7 @@ a {
   .container form select,
   .container form input,
   .container form button {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
   .sub-title > p {
     font-size: 1.9em;
