@@ -3,20 +3,35 @@ import "./App.css";
 import Color from "./Color";
 import { getTintsAndShades } from "./tintsAndShadesGenerator";
 import { switchTheme } from "./theme";
+import { isError } from "./error";
 
 function App() {
   const [color, setColor] = useState("");
   const [type, setType] = useState({ hsl: false, hex: true, rgb: false });
 
   const [list, setList] = useState([]);
+  const [error_msg, setError_msg] = useState("");
+  const [errorAlert, setErrorAlert] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (color) {
-      setList(getTintsAndShades(color, type));
-      setColor("");
+      if (!isError(color, type)) {
+        setList(getTintsAndShades(color, type));
+        setColor("");
+      } else {
+        setErrorAlert(true);
+        setError_msg(isError(color, type));
+      }
     }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setErrorAlert(false);
+      setError_msg("");
+    }, 5000);
+  }, [errorAlert]);
 
   useEffect(() => {
     switchTheme();
@@ -37,6 +52,7 @@ function App() {
             </div>
           </label>
         </div>
+        <div className="error">{error_msg}</div>
         <form onSubmit={handleSubmit}>
           <select
             name="type"

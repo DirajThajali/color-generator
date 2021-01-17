@@ -1,7 +1,8 @@
 import { rgbToHsl, hexToHsl, hslToHex } from "./colorConverter";
 
 export const getTintsAndShades = (color, type) => {
-  const isPrimOrSecond = getPrimaryOrSecondaryColor(color);
+  const primOrSec = getPrimaryOrSecondaryColor(color);
+  const isPrimOrSecond = primOrSec === -1 ? false : true;
   let list = [];
   let value = color;
   // console.log(type);
@@ -15,7 +16,13 @@ export const getTintsAndShades = (color, type) => {
   }
   const re = new RegExp("\\s+");
   value = value.split(re);
-  let h = isPrimOrSecond || parseInt(value[0]);
+  let h = null;
+  if (isPrimOrSecond) {
+    h = primOrSec;
+  } else {
+    h = parseInt(value[0]);
+  }
+
   const s = 100;
   let l = 100;
 
@@ -73,6 +80,18 @@ const getPrimaryOrSecondaryColor = (color) => {
     case "magenta":
       return 300;
     default:
-      return 0;
+      return -1;
   }
 };
+
+export const supportedPrimAndSecon = [
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "violet",
+  "azure",
+  "purple",
+  "magenta",
+];
