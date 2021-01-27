@@ -1,4 +1,4 @@
-import { supportedPrimAndSecon } from "./tintsAndShadesGenerator";
+import { supportedPrimAndSecon } from "../TintsAndShadesGenerator/tintsAndShadesGenerator";
 export const isError = (input, type) => {
   if (supportedPrimAndSecon.includes(input)) {
     return "";

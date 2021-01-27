@@ -1,4 +1,4 @@
-import { rgbToHsl, hexToHsl, hslToHex } from "./colorConverter";
+import { rgbToHsl, hexToHsl, hslToHex } from "../ColorConverter/colorConverter";
 
 export const getTintsAndShades = (color, type) => {
   const primOrSec = getPrimaryOrSecondaryColor(color);

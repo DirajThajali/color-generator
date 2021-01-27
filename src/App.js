@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Color from "./Color";
-import { getTintsAndShades } from "./tintsAndShadesGenerator";
-import { switchTheme } from "./theme";
-import { isError } from "./error";
+import Color from "./components/Color/Color";
+import { getTintsAndShades } from "./components/TintsAndShadesGenerator/tintsAndShadesGenerator";
+import { switchTheme } from "./components/Theme/theme";
+import { isError } from "./components/Error/error";
 
 function App() {
   const [color, setColor] = useState("");
